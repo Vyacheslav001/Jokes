@@ -1,25 +1,26 @@
-package com.joke.jokes.screens
+package com.joke.jokes.screens.categories
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.`fun`.joke.jokes.databinding.FragmentCategoriesBinding
 import com.joke.jokes.api.CategoryLoader
 import com.joke.jokes.api.CategoryLoaderListener
-import com.`fun`.joke.jokes.databinding.FragmentMainBinding
 import com.joke.jokes.replaceFragment
+import com.joke.jokes.screens.joke.JokeFragment
 
-class MainFragment : Fragment(), CategoryLoaderListener {
+class CategoriesFragment : Fragment(), CategoryLoaderListener {
 
-    private var _binding: FragmentMainBinding? = null
+    private var _binding: FragmentCategoriesBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,11 +34,11 @@ class MainFragment : Fragment(), CategoryLoaderListener {
     }
 
     private fun showDetails() {
-        replaceFragment(DetailsFragment.newInstance())
+        replaceFragment(JokeFragment.newInstance())
     }
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = CategoriesFragment()
     }
 
     override fun onDestroy() {

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.joke.jokes.screens.DetailsFragment"
+    tools:context="com.joke.jokes.screens.joke.JokeFragment"
     android:id="@+id/DetailsFragment">
 
     <!-- TODO: Update blank fragment layout -->

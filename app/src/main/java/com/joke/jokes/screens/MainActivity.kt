@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.`fun`.joke.jokes.R
+import com.joke.jokes.screens.categories.CategoriesFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
-            setFragment(MainFragment.newInstance())
+            setFragment(CategoriesFragment.newInstance())
         }
     }
 
