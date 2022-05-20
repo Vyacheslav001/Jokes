@@ -1,6 +1,6 @@
 package com.`fun`.joke.jokes
 
 interface CategoryLoaderListener {
-    fun onLoaded(category: CategoryDTO)
+    fun onLoaded(categories: List<String>)
     fun onFailed(throwable: Throwable)
 }
