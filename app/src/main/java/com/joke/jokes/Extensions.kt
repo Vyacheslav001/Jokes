@@ -1,4 +1,4 @@
-package com.`fun`.joke.jokes
+package com.joke.jokes
 
 import androidx.fragment.app.Fragment
 

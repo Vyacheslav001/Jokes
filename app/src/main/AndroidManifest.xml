@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jokes">
         <activity
-            android:name=".MainActivity"
+            android:name="com.joke.jokes.screens.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.`fun`.joke.jokes
+package com.joke.jokes.api
 
 import android.os.Handler
 import android.os.Looper

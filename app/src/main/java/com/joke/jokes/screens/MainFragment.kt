@@ -1,11 +1,14 @@
-package com.`fun`.joke.jokes
+package com.joke.jokes.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.joke.jokes.api.CategoryLoader
+import com.joke.jokes.api.CategoryLoaderListener
 import com.`fun`.joke.jokes.databinding.FragmentMainBinding
+import com.joke.jokes.replaceFragment
 
 class MainFragment : Fragment(), CategoryLoaderListener {
 

@@ -1,8 +1,9 @@
-package com.`fun`.joke.jokes
+package com.joke.jokes.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.`fun`.joke.jokes.R
 
 class MainActivity : AppCompatActivity() {
 
