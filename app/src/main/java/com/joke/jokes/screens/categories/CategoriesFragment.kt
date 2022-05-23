@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.`fun`.joke.jokes.databinding.FragmentCategoriesBinding
 import com.joke.jokes.api.CategoryLoader
 import com.joke.jokes.api.CategoryLoaderListener
@@ -15,6 +16,7 @@ class CategoriesFragment : Fragment(), CategoryLoaderListener {
 
     private var _binding: FragmentCategoriesBinding? = null
     private val binding get() = _binding!!
+    private val adapter = CategoryAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,10 +28,15 @@ class CategoriesFragment : Fragment(), CategoryLoaderListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        binding.detailsButton.setOnClickListener {
+//            CategoryLoader(this).loadCategory()
+//        }
+        renderData()
+    }
 
-        binding.detailsButton.setOnClickListener {
-
-            CategoryLoader(this).loadCategory()
+    private fun renderData(){
+        with(binding){
+            categoriesFragmentRecyclerView.adapter = adapter
         }
     }
 
