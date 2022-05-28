@@ -1,5 +1,6 @@
 package com.joke.jokes.screens.categories
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +10,13 @@ import com.`fun`.joke.jokes.databinding.CategoryItemBinding
 
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
 
-    private var categoryList = ArrayList<Category>()
+    private val categoriesList = ArrayList<String>()
 
     inner class CategoryHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val binding = CategoryItemBinding.bind(item)
-        fun bind(category: Category) {
-            binding.categoryItemTextView.text = category.category
-            itemView.setOnClickListener{
-
+        fun bind(category: String) {
+            binding.categoryItemTextView.text = category
+            itemView.setOnClickListener {
             }
         }
     }
@@ -28,15 +28,17 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
     }
 
     override fun onBindViewHolder(holder: CategoryHolder, position: Int) {
-        holder.bind(categoryList[position])
+        holder.bind(categoriesList[position])
     }
 
     override fun getItemCount(): Int {
-        return categoryList.size
+        return categoriesList.size
     }
 
-    fun setCategory(data: ArrayList<Category>){
-        categoryList = data
+    @SuppressLint("NotifyDataSetChanged")
+    fun setCategory(data: List<String>) {
+        categoriesList.clear()
+        categoriesList.addAll(data)
         notifyDataSetChanged()
     }
 }
